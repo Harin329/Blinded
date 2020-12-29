@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE24D5B0259A76A7007A45C3 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE24D5AF259A76A7007A45C3 /* PrivacyViewController.swift */; };
+		BE24D5BC259A90D9007A45C3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE24D5BB259A90D9007A45C3 /* GameKit.framework */; };
+		BE64E54125994EF2003755DA /* OverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE64E54025994EF2003755DA /* OverlayScene.swift */; };
 		BEE8155E2593DF8700A11738 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE8155D2593DF8700A11738 /* AppDelegate.swift */; };
-		BEE815602593DF8700A11738 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEE8155F2593DF8700A11738 /* GameScene.sks */; };
-		BEE815622593DF8700A11738 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BEE815612593DF8700A11738 /* Actions.sks */; };
 		BEE815642593DF8700A11738 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE815632593DF8700A11738 /* GameScene.swift */; };
 		BEE815662593DF8700A11738 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE815652593DF8700A11738 /* GameViewController.swift */; };
 		BEE815692593DF8700A11738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE815672593DF8700A11738 /* Main.storyboard */; };
 		BEE8156B2593DF8A00A11738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEE8156A2593DF8A00A11738 /* Assets.xcassets */; };
 		BEE815762593DF8A00A11738 /* Blinded_SKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE815752593DF8A00A11738 /* Blinded_SKTests.swift */; };
 		BEE815812593DF8A00A11738 /* Blinded_SKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE815802593DF8A00A11738 /* Blinded_SKUITests.swift */; };
+		BEE815AB2594094400A11738 /* Ninja-0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815A72594094300A11738 /* Ninja-0.mp3 */; };
+		BEE815AC2594094400A11738 /* Ninja-90.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815A82594094300A11738 /* Ninja-90.mp3 */; };
+		BEE815AD2594094400A11738 /* Ninja-180.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815A92594094300A11738 /* Ninja-180.mp3 */; };
+		BEE815AE2594094400A11738 /* Ninja-270.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815AA2594094300A11738 /* Ninja-270.mp3 */; };
+		BEE815B325940CED00A11738 /* Correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815B225940CED00A11738 /* Correct.mp3 */; };
+		BEE815B82594393800A11738 /* Lost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815B72594393700A11738 /* Lost.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE24D5AF259A76A7007A45C3 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		BE24D5BB259A90D9007A45C3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BE64E54025994EF2003755DA /* OverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayScene.swift; sourceTree = "<group>"; };
 		BEE8155A2593DF8700A11738 /* Blinded-SK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blinded-SK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE8155D2593DF8700A11738 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEE8155F2593DF8700A11738 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		BEE815612593DF8700A11738 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BEE815632593DF8700A11738 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BEE815652593DF8700A11738 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BEE815682593DF8700A11738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,12 @@
 		BEE8157C2593DF8A00A11738 /* Blinded-SKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blinded-SKUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE815802593DF8A00A11738 /* Blinded_SKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blinded_SKUITests.swift; sourceTree = "<group>"; };
 		BEE815822593DF8A00A11738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEE815A72594094300A11738 /* Ninja-0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-0.mp3"; path = "../../../Ninja-0.mp3"; sourceTree = "<group>"; };
+		BEE815A82594094300A11738 /* Ninja-90.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-90.mp3"; path = "../../../Ninja-90.mp3"; sourceTree = "<group>"; };
+		BEE815A92594094300A11738 /* Ninja-180.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-180.mp3"; path = "../../../Ninja-180.mp3"; sourceTree = "<group>"; };
+		BEE815AA2594094300A11738 /* Ninja-270.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-270.mp3"; path = "../../../Ninja-270.mp3"; sourceTree = "<group>"; };
+		BEE815B225940CED00A11738 /* Correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Correct.mp3; path = ../../../Correct.mp3; sourceTree = "<group>"; };
+		BEE815B72594393700A11738 /* Lost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lost.mp3; path = ../../../Lost.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE24D5BC259A90D9007A45C3 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE24D5BA259A90D9007A45C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE24D5BB259A90D9007A45C3 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BEE815512593DF8700A11738 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +108,7 @@
 				BEE815742593DF8A00A11738 /* Blinded-SKTests */,
 				BEE8157F2593DF8A00A11738 /* Blinded-SKUITests */,
 				BEE8155B2593DF8700A11738 /* Products */,
+				BE24D5BA259A90D9007A45C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +125,12 @@
 		BEE8155C2593DF8700A11738 /* Blinded-SK */ = {
 			isa = PBXGroup;
 			children = (
+				BEE815A62594093700A11738 /* Sounds */,
 				BEE8155D2593DF8700A11738 /* AppDelegate.swift */,
-				BEE8155F2593DF8700A11738 /* GameScene.sks */,
-				BEE815612593DF8700A11738 /* Actions.sks */,
 				BEE815632593DF8700A11738 /* GameScene.swift */,
+				BE64E54025994EF2003755DA /* OverlayScene.swift */,
 				BEE815652593DF8700A11738 /* GameViewController.swift */,
+				BE24D5AF259A76A7007A45C3 /* PrivacyViewController.swift */,
 				BEE815672593DF8700A11738 /* Main.storyboard */,
 				BEE8156A2593DF8A00A11738 /* Assets.xcassets */,
 				BEE8156C2593DF8A00A11738 /* Info.plist */,
@@ -129,6 +154,19 @@
 				BEE815822593DF8A00A11738 /* Info.plist */,
 			);
 			path = "Blinded-SKUITests";
+			sourceTree = "<group>";
+		};
+		BEE815A62594093700A11738 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BEE815B72594393700A11738 /* Lost.mp3 */,
+				BEE815A72594094300A11738 /* Ninja-0.mp3 */,
+				BEE815B225940CED00A11738 /* Correct.mp3 */,
+				BEE815A82594094300A11738 /* Ninja-90.mp3 */,
+				BEE815A92594094300A11738 /* Ninja-180.mp3 */,
+				BEE815AA2594094300A11738 /* Ninja-270.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,10 +272,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE815B82594393800A11738 /* Lost.mp3 in Resources */,
+				BEE815B325940CED00A11738 /* Correct.mp3 in Resources */,
+				BEE815AD2594094400A11738 /* Ninja-180.mp3 in Resources */,
+				BEE815AC2594094400A11738 /* Ninja-90.mp3 in Resources */,
+				BEE815AB2594094400A11738 /* Ninja-0.mp3 in Resources */,
 				BEE815692593DF8700A11738 /* Main.storyboard in Resources */,
-				BEE815602593DF8700A11738 /* GameScene.sks in Resources */,
 				BEE8156B2593DF8A00A11738 /* Assets.xcassets in Resources */,
-				BEE815622593DF8700A11738 /* Actions.sks in Resources */,
+				BEE815AE2594094400A11738 /* Ninja-270.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +305,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE815642593DF8700A11738 /* GameScene.swift in Sources */,
+				BE64E54125994EF2003755DA /* OverlayScene.swift in Sources */,
+				BE24D5B0259A76A7007A45C3 /* PrivacyViewController.swift in Sources */,
 				BEE815662593DF8700A11738 /* GameViewController.swift in Sources */,
 				BEE8155E2593DF8700A11738 /* AppDelegate.swift in Sources */,
 			);
@@ -435,14 +479,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35ZK849627;
 				INFOPLIST_FILE = "Blinded-SK/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hungrii.Blinded-SK";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hungrii.Blinded;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,14 +499,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35ZK849627;
 				INFOPLIST_FILE = "Blinded-SK/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hungrii.Blinded-SK";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hungrii.Blinded;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

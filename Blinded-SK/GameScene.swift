@@ -7,82 +7,218 @@
 
 import SpriteKit
 import GameplayKit
+import CoreMotion
+import AVFoundation
+import GameKit
 
-class GameScene: SKScene {
+@available(iOS 11.0, *)
+class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    private let directions = [0, 90, 180, 270] // 0-359
+    var overlay = OverlayScene(size: CGSize(width: 100, height: 100))
+    var parentHS: UILabel?
     
-    override func didMove(to view: SKView) {
+    let APP = CMHeadphoneMotionManager()
+    var player: AVAudioPlayer?
+    
+    private var foe = 0
+    private var relative = 0
+    private var facing = 0
+
+    
+    // Yaw Range -3 to 3
+    // +-3 -> 270, 0-90,-1.5 -> 0, 1.5 -> 180
+    override init() {
+        super.init()
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        APP.delegate = self
         
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
+        foe = directions.randomElement()!
+        print(foe)
+        relative = foe
         
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(cycleOnce(timer:)), userInfo: [], repeats: true)
+        
+        guard APP.isDeviceMotionAvailable else { return }
+        APP.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error  in
+            guard let motion = motion, error == nil else { return }
+            let yaw = motion.attitude.yaw
             
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
+            if (yaw >= 0) {
+                // Left
+                if (yaw >= 1.5) {
+                    // Q3
+                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
+//                        print("left")
+                        self?.facing = 180
+                        if (self?.foe == 0) {
+                            self?.relative = 90
+                        } else if (self?.foe == 90) {
+                            self?.relative = 180
+                        } else if (self?.foe == 180) {
+                            self?.relative = 270
+                        } else if (self?.foe == 270) {
+                            self?.relative = 0
+                        }
+                    } else {
+//                        print("back")
+                        self?.facing = 270
+                        if (self?.foe == 0) {
+                            self?.relative = 180
+                        } else if (self?.foe == 90) {
+                            self?.relative = 270
+                        } else if (self?.foe == 180) {
+                            self?.relative = 0
+                        } else if (self?.foe == 270) {
+                            self?.relative = 90
+                        }
+                    }
+                } else {
+                    // Q2
+                    if (abs(yaw) >= abs(yaw - 1.5)) {
+//                        print("left")
+                        self?.facing = 180
+                        if (self?.foe == 0) {
+                            self?.relative = 90
+                        } else if (self?.foe == 90) {
+                            self?.relative = 180
+                        } else if (self?.foe == 180) {
+                            self?.relative = 270
+                        } else if (self?.foe == 270) {
+                            self?.relative = 0
+                        }
+                    } else {
+//                        print("front")
+                        self?.facing = 90
+                        if (self?.foe == 0) {
+                            self?.relative = 0
+                        } else if (self?.foe == 90) {
+                            self?.relative = 90
+                        } else if (self?.foe == 180) {
+                            self?.relative = 180
+                        } else if (self?.foe == 270) {
+                            self?.relative = 270
+                        }
+                    }
+                }
+            } else {
+                // Right
+                if (yaw >= -1.5) {
+                    // Q1
+                    if (abs(yaw) >= abs(yaw - 1.5)) {
+//                        print("right")
+                        self?.facing = 0
+                        if (self?.foe == 0) {
+                            self?.relative = 270
+                        } else if (self?.foe == 90) {
+                            self?.relative = 0
+                        } else if (self?.foe == 180) {
+                            self?.relative = 90
+                        } else if (self?.foe == 270) {
+                            self?.relative = 180
+                        }
+                    } else {
+//                        print("front")
+                        self?.facing = 90
+                        if (self?.foe == 0) {
+                            self?.relative = 0
+                        } else if (self?.foe == 90) {
+                            self?.relative = 90
+                        } else if (self?.foe == 180) {
+                            self?.relative = 180
+                        } else if (self?.foe == 270) {
+                            self?.relative = 270
+                        }
+                    }
+                } else {
+                    // Q4
+                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
+//                        print("right")
+                        self?.facing = 0
+                        if (self?.foe == 0) {
+                            self?.relative = 270
+                        } else if (self?.foe == 90) {
+                            self?.relative = 0
+                        } else if (self?.foe == 180) {
+                            self?.relative = 90
+                        } else if (self?.foe == 270) {
+                            self?.relative = 180
+                        }
+                    } else {
+//                        print("back")
+                        self?.facing = 270
+                        if (self?.foe == 0) {
+                            self?.relative = 180
+                        } else if (self?.foe == 90) {
+                            self?.relative = 270
+                        } else if (self?.foe == 180) {
+                            self?.relative = 0
+                        } else if (self?.foe == 270) {
+                            self?.relative = 90
+                        }
+                    }
+                }
+            }
+            
+        })
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    @objc func cycleOnce(timer: Timer!) {
+        if (facing == foe) {
+            self.overlay.life = 2
+            playSound(sound: "Correct")
+            self.overlay.score += 1
+            print(self.overlay.score)
+            foe = directions.randomElement()!
+        } else {
+            if (self.overlay.life >= 1) {
+                self.overlay.life -= 1
+                let res = "Ninja-" + String(relative)
+                playSound(sound: res)
+            } else {
+                playSound(sound: "Lost")
+                timer.invalidate()
+                self.overlay.pauseNode.isHidden = true
+                self.overlay.scoreNode.isHidden = true
+                self.overlay.restartNode.isHidden = false
+                self.overlay.menuNode.isHidden = false
+                self.overlay.finalScoreNode.text = "Final Score: \(self.overlay.score)"
+                self.overlay.finalScoreNode.isHidden = false
+                
+                
+                let highScore = UserDefaults.standard.value(forKey: "highscore") as? Int ?? 0
+                UserDefaults.standard.set(max(self.overlay.score, highScore), forKey: "highscore")
+                
+                GKLeaderboard.submitScore(self.overlay.score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [LEADERBOARD_ID]) { error in
+                    if (error != nil) {
+                        print(error as Any)
+                    }
+                }
+            }
         }
     }
     
-    
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+    func playSound(sound: String) {
+        guard let url = Bundle.main.url(forResource: sound, withExtension: "mp3") else {
+            return
         }
         
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = player else { return }
+            
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-    }
 }
