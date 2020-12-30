@@ -16,6 +16,9 @@ class OverlayScene: SKScene {
     var pauseNode: SKSpriteNode!
     var scoreNode: SKLabelNode!
     
+    var youNode: SKSpriteNode!
+    var answerNode: SKSpriteNode!
+    
     var resumeNode: SKLabelNode!
     var restartNode: SKLabelNode!
     var menuNode: SKLabelNode!
@@ -55,6 +58,14 @@ class OverlayScene: SKScene {
         self.resumeNode.fontSize = 24
         self.resumeNode.position = CGPoint(x: size.width/2, y: size.height/2 + 50)
         
+        self.youNode = SKSpriteNode(imageNamed: "ArrowRed")
+        self.youNode.size = CGSize(width: spriteSize, height: spriteSize)
+        self.youNode.position = CGPoint(x: size.width/2 - 30, y: size.height/2 + 100)
+        
+        self.answerNode = SKSpriteNode(imageNamed: "ArrowGreen")
+        self.answerNode.size = CGSize(width: spriteSize, height: spriteSize)
+        self.answerNode.position = CGPoint(x: size.width/2 + 30, y: size.height/2 + 100)
+        
         self.restartNode = SKLabelNode(text: "Restart")
         self.restartNode.name = "Restart"
         self.restartNode.fontColor = UIColor.white
@@ -70,13 +81,17 @@ class OverlayScene: SKScene {
         self.finalScoreNode = SKLabelNode(text: "Score: 0")
         self.finalScoreNode.fontColor = UIColor.white
         self.finalScoreNode.fontSize = 24
-        self.finalScoreNode.position = CGPoint(x: size.width/2, y: size.height/2 + 100)
+        self.finalScoreNode.position = CGPoint(x: size.width/2, y: size.height/2 + 150)
         
+        self.addChild(self.youNode)
+        self.addChild(self.answerNode)
         self.addChild(self.resumeNode)
         self.addChild(self.restartNode)
         self.addChild(self.menuNode)
         self.addChild(self.finalScoreNode)
         
+        self.youNode.isHidden = true
+        self.answerNode.isHidden = true
         self.resumeNode.isHidden = true
         self.restartNode.isHidden = true
         self.menuNode.isHidden = true
@@ -97,6 +112,8 @@ class OverlayScene: SKScene {
             for node in tappedNodes {
                 if let tappedButton = node as? SKLabelNode {
                     if tappedButton.name == "Restart" {
+                        self.youNode.isHidden = true
+                        self.answerNode.isHidden = true
                         self.resumeNode.isHidden = true
                         self.restartNode.isHidden = true
                         self.menuNode.isHidden = true

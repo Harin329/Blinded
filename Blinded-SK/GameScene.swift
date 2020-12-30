@@ -17,7 +17,7 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate, GADInterstitialDele
     
     var parentVC: UIViewController?
     var interstitial: GADInterstitial!
-
+    
     private let directions = [0, 45, 90, 135, 180, 225, 270, 315] // 0-359
     var overlay = OverlayScene(size: CGSize(width: 100, height: 100))
     
@@ -27,7 +27,7 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate, GADInterstitialDele
     private var foe = 0
     private var relative = 0
     private var facing = 0
-
+    
     
     // Yaw Range -3 to 3
     // +-3 -> 270, 0-90,-1.5 -> 0, 1.5 -> 180
@@ -55,123 +55,6 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate, GADInterstitialDele
             }
             
             self?.facing = Int(degree)
-
-            
-//            if (yaw >= 0) {
-//                // Left
-//                if (yaw >= 1.5) {
-//                    // Q3
-//                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
-////                        print("left")
-//                        self?.facing = 180
-//                        if (self?.foe == 0) {
-//                            self?.relative = 90
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 180
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 270
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 0
-//                        }
-//                    } else {
-////                        print("back")
-//                        self?.facing = 270
-//                        if (self?.foe == 0) {
-//                            self?.relative = 180
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 270
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 0
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 90
-//                        }
-//                    }
-//                } else {
-//                    // Q2
-//                    if (abs(yaw) >= abs(yaw - 1.5)) {
-////                        print("left")
-//                        self?.facing = 180
-//                        if (self?.foe == 0) {
-//                            self?.relative = 90
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 180
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 270
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 0
-//                        }
-//                    } else {
-////                        print("front")
-//                        self?.facing = 90
-//                        if (self?.foe == 0) {
-//                            self?.relative = 0
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 90
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 180
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 270
-//                        }
-//                    }
-//                }
-//            } else {
-//                // Right
-//                if (yaw >= -1.5) {
-//                    // Q1
-//                    if (abs(yaw) >= abs(yaw - 1.5)) {
-////                        print("right")
-//                        self?.facing = 0
-//                        if (self?.foe == 0) {
-//                            self?.relative = 270
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 0
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 90
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 180
-//                        }
-//                    } else {
-////                        print("front")
-//                        self?.facing = 90
-//                        if (self?.foe == 0) {
-//                            self?.relative = 0
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 90
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 180
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 270
-//                        }
-//                    }
-//                } else {
-//                    // Q4
-//                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
-////                        print("right")
-//                        self?.facing = 0
-//                        if (self?.foe == 0) {
-//                            self?.relative = 270
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 0
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 90
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 180
-//                        }
-//                    } else {
-////                        print("back")
-//                        self?.facing = 270
-//                        if (self?.foe == 0) {
-//                            self?.relative = 180
-//                        } else if (self?.foe == 90) {
-//                            self?.relative = 270
-//                        } else if (self?.foe == 180) {
-//                            self?.relative = 0
-//                        } else if (self?.foe == 270) {
-//                            self?.relative = 90
-//                        }
-//                    }
-//                }
-//            }
             
         })
     }
@@ -197,20 +80,33 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate, GADInterstitialDele
     
     @objc func cycleOnce(timer: Timer!) {
         facing = nearest(of: facing, options: directions)
-        let seperation = facing - foe
-        if (seperation > 90) {
+        
+        if (facing > foe) {
+            let seperation = facing - foe
             relative = 360 - (seperation - 90)
-        } else if (seperation == 90) {
-            relative = 0
-        } else {
-            relative = seperation
+        } else if (facing < foe) {
+            let seperation = foe - facing
+            relative = seperation + 90
         }
+        
+        if (relative >= 360) {
+            relative = relative - 360
+        }
+        
+        if (relative < 0) {
+            relative = 360 + relative
+        }
+        
+        // Debug
+        // print("You \(facing)")
+        // print("Enemy \(foe)")
+        // print("Relative \(relative)")
         
         if (facing == foe) {
             self.overlay.life = 2
             playSound(sound: "Correct")
             self.overlay.score += 1
-            print(self.overlay.score)
+            //            print(self.overlay.score)
             foe = directions.randomElement()!
         } else {
             if (self.overlay.life >= 1) {
@@ -222,31 +118,35 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate, GADInterstitialDele
                 timer.invalidate()
                 self.overlay.pauseNode.isHidden = true
                 self.overlay.scoreNode.isHidden = true
+                self.overlay.youNode.isHidden = false
+                self.overlay.answerNode.isHidden = false
+                self.overlay.youNode.zRotation = (CGFloat(facing) - 90) * (CGFloat.pi/180)
+                self.overlay.answerNode.zRotation = (CGFloat(foe) - 90) * (CGFloat.pi/180)
                 self.overlay.restartNode.isHidden = false
                 self.overlay.menuNode.isHidden = false
                 self.overlay.finalScoreNode.text = "Final Score: \(self.overlay.score)"
                 self.overlay.finalScoreNode.isHidden = false
                 
-                let highScore = UserDefaults.standard.value(forKey: "highscore") as? Int ?? 0
-                UserDefaults.standard.set(max(self.overlay.score, highScore), forKey: "highscore")
-                
-                GKLeaderboard.submitScore(self.overlay.score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [LEADERBOARD_ID]) { error in
-                    if (error != nil) {
-                        print(error as Any)
-                    }
-                }
-                
                 if interstitial.isReady {
                     interstitial.present(fromRootViewController: parentVC!)
-                  } else {
-                    print("Ad wasn't ready")
-                  }
+                } else {
+                    // print("Ad wasn't ready")
+                }
+            }
+        }
+        
+        let highScore = UserDefaults.standard.value(forKey: "highscore") as? Int ?? 0
+        UserDefaults.standard.set(max(self.overlay.score, highScore), forKey: "highscore")
+        
+        GKLeaderboard.submitScore(self.overlay.score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [LEADERBOARD_ID]) { error in
+            if (error != nil) {
+                // print(error as Any)
             }
         }
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-1633693256297531/2415015394")
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
@@ -271,7 +171,7 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate, GADInterstitialDele
             
             player.play()
         } catch let error {
-            print(error.localizedDescription)
+            // print(error.localizedDescription)
         }
     }
     
