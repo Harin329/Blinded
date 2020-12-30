@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C027F640FC48729CA79F1FC /* Pods_Blinded_SK_Blinded_SKUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5776F789217DE5F9A60567CB /* Pods_Blinded_SK_Blinded_SKUITests.framework */; };
+		8A60E352184B4F9A629BD16F /* Pods_Blinded_SKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DBDDE164DFD68576C2F350 /* Pods_Blinded_SKTests.framework */; };
 		BE24D5B0259A76A7007A45C3 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE24D5AF259A76A7007A45C3 /* PrivacyViewController.swift */; };
 		BE24D5BC259A90D9007A45C3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE24D5BB259A90D9007A45C3 /* GameKit.framework */; };
 		BE64E54125994EF2003755DA /* OverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE64E54025994EF2003755DA /* OverlayScene.swift */; };
@@ -17,12 +19,17 @@
 		BEE8156B2593DF8A00A11738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEE8156A2593DF8A00A11738 /* Assets.xcassets */; };
 		BEE815762593DF8A00A11738 /* Blinded_SKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE815752593DF8A00A11738 /* Blinded_SKTests.swift */; };
 		BEE815812593DF8A00A11738 /* Blinded_SKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE815802593DF8A00A11738 /* Blinded_SKUITests.swift */; };
-		BEE815AB2594094400A11738 /* Ninja-0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815A72594094300A11738 /* Ninja-0.mp3 */; };
-		BEE815AC2594094400A11738 /* Ninja-90.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815A82594094300A11738 /* Ninja-90.mp3 */; };
-		BEE815AD2594094400A11738 /* Ninja-180.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815A92594094300A11738 /* Ninja-180.mp3 */; };
-		BEE815AE2594094400A11738 /* Ninja-270.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815AA2594094300A11738 /* Ninja-270.mp3 */; };
-		BEE815B325940CED00A11738 /* Correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815B225940CED00A11738 /* Correct.mp3 */; };
-		BEE815B82594393800A11738 /* Lost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEE815B72594393700A11738 /* Lost.mp3 */; };
+		BEF9866D259C4EB30008E38B /* Ninja-90.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF98667259C4EB30008E38B /* Ninja-90.mp3 */; };
+		BEF9866E259C4EB30008E38B /* Correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF98668259C4EB30008E38B /* Correct.mp3 */; };
+		BEF9866F259C4EB30008E38B /* Lost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF98669259C4EB30008E38B /* Lost.mp3 */; };
+		BEF98670259C4EB30008E38B /* Ninja-0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF9866A259C4EB30008E38B /* Ninja-0.mp3 */; };
+		BEF98671259C4EB30008E38B /* Ninja-180.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF9866B259C4EB30008E38B /* Ninja-180.mp3 */; };
+		BEF98672259C4EB30008E38B /* Ninja-270.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF9866C259C4EB30008E38B /* Ninja-270.mp3 */; };
+		BEF98680259C58FE0008E38B /* Ninja-135.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF9867C259C58FE0008E38B /* Ninja-135.mp3 */; };
+		BEF98681259C58FE0008E38B /* Ninja-315.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF9867D259C58FE0008E38B /* Ninja-315.mp3 */; };
+		BEF98682259C58FE0008E38B /* Ninja-225.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF9867E259C58FE0008E38B /* Ninja-225.mp3 */; };
+		BEF98683259C58FE0008E38B /* Ninja-45.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF9867F259C58FE0008E38B /* Ninja-45.mp3 */; };
+		CC64617AE96D43640BDD6E81 /* Pods_Blinded_SK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA91ACEFEE666C911C0FA0C8 /* Pods_Blinded_SK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BCE401CD0BC3DE481ABE75A /* Pods-Blinded-SKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blinded-SKTests.release.xcconfig"; path = "Target Support Files/Pods-Blinded-SKTests/Pods-Blinded-SKTests.release.xcconfig"; sourceTree = "<group>"; };
+		17DBDDE164DFD68576C2F350 /* Pods_Blinded_SKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blinded_SKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		413DD19187A8BDA1B44D118D /* Pods-Blinded-SK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blinded-SK.release.xcconfig"; path = "Target Support Files/Pods-Blinded-SK/Pods-Blinded-SK.release.xcconfig"; sourceTree = "<group>"; };
+		48F17C9BA34C3EE4D7D63607 /* Pods-Blinded-SK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blinded-SK.debug.xcconfig"; path = "Target Support Files/Pods-Blinded-SK/Pods-Blinded-SK.debug.xcconfig"; sourceTree = "<group>"; };
+		4961B924C04CC00EB9A93109 /* Pods-Blinded-SK-Blinded-SKUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blinded-SK-Blinded-SKUITests.debug.xcconfig"; path = "Target Support Files/Pods-Blinded-SK-Blinded-SKUITests/Pods-Blinded-SK-Blinded-SKUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5776F789217DE5F9A60567CB /* Pods_Blinded_SK_Blinded_SKUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blinded_SK_Blinded_SKUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE24D5AF259A76A7007A45C3 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		BE24D5BB259A90D9007A45C3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BE64E54025994EF2003755DA /* OverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayScene.swift; sourceTree = "<group>"; };
@@ -59,12 +72,19 @@
 		BEE8157C2593DF8A00A11738 /* Blinded-SKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blinded-SKUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE815802593DF8A00A11738 /* Blinded_SKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blinded_SKUITests.swift; sourceTree = "<group>"; };
 		BEE815822593DF8A00A11738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEE815A72594094300A11738 /* Ninja-0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-0.mp3"; path = "../../../Ninja-0.mp3"; sourceTree = "<group>"; };
-		BEE815A82594094300A11738 /* Ninja-90.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-90.mp3"; path = "../../../Ninja-90.mp3"; sourceTree = "<group>"; };
-		BEE815A92594094300A11738 /* Ninja-180.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-180.mp3"; path = "../../../Ninja-180.mp3"; sourceTree = "<group>"; };
-		BEE815AA2594094300A11738 /* Ninja-270.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ninja-270.mp3"; path = "../../../Ninja-270.mp3"; sourceTree = "<group>"; };
-		BEE815B225940CED00A11738 /* Correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Correct.mp3; path = ../../../Correct.mp3; sourceTree = "<group>"; };
-		BEE815B72594393700A11738 /* Lost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lost.mp3; path = ../../../Lost.mp3; sourceTree = "<group>"; };
+		BEF98667259C4EB30008E38B /* Ninja-90.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-90.mp3"; sourceTree = "<group>"; };
+		BEF98668259C4EB30008E38B /* Correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Correct.mp3; sourceTree = "<group>"; };
+		BEF98669259C4EB30008E38B /* Lost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Lost.mp3; sourceTree = "<group>"; };
+		BEF9866A259C4EB30008E38B /* Ninja-0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-0.mp3"; sourceTree = "<group>"; };
+		BEF9866B259C4EB30008E38B /* Ninja-180.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-180.mp3"; sourceTree = "<group>"; };
+		BEF9866C259C4EB30008E38B /* Ninja-270.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-270.mp3"; sourceTree = "<group>"; };
+		BEF9867C259C58FE0008E38B /* Ninja-135.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-135.mp3"; sourceTree = "<group>"; };
+		BEF9867D259C58FE0008E38B /* Ninja-315.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-315.mp3"; sourceTree = "<group>"; };
+		BEF9867E259C58FE0008E38B /* Ninja-225.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-225.mp3"; sourceTree = "<group>"; };
+		BEF9867F259C58FE0008E38B /* Ninja-45.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-45.mp3"; sourceTree = "<group>"; };
+		C7D1E99FDA6F81215F7FD238 /* Pods-Blinded-SK-Blinded-SKUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blinded-SK-Blinded-SKUITests.release.xcconfig"; path = "Target Support Files/Pods-Blinded-SK-Blinded-SKUITests/Pods-Blinded-SK-Blinded-SKUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CA91ACEFEE666C911C0FA0C8 /* Pods_Blinded_SK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blinded_SK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F81594DCEA05650EE12C4DBA /* Pods-Blinded-SKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blinded-SKTests.debug.xcconfig"; path = "Target Support Files/Pods-Blinded-SKTests/Pods-Blinded-SKTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE24D5BC259A90D9007A45C3 /* GameKit.framework in Frameworks */,
+				CC64617AE96D43640BDD6E81 /* Pods_Blinded_SK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A60E352184B4F9A629BD16F /* Pods_Blinded_SKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,16 +109,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C027F640FC48729CA79F1FC /* Pods_Blinded_SK_Blinded_SKUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E8DF8DC933ACD5C625677A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48F17C9BA34C3EE4D7D63607 /* Pods-Blinded-SK.debug.xcconfig */,
+				413DD19187A8BDA1B44D118D /* Pods-Blinded-SK.release.xcconfig */,
+				4961B924C04CC00EB9A93109 /* Pods-Blinded-SK-Blinded-SKUITests.debug.xcconfig */,
+				C7D1E99FDA6F81215F7FD238 /* Pods-Blinded-SK-Blinded-SKUITests.release.xcconfig */,
+				F81594DCEA05650EE12C4DBA /* Pods-Blinded-SKTests.debug.xcconfig */,
+				0BCE401CD0BC3DE481ABE75A /* Pods-Blinded-SKTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BE24D5BA259A90D9007A45C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BE24D5BB259A90D9007A45C3 /* GameKit.framework */,
+				CA91ACEFEE666C911C0FA0C8 /* Pods_Blinded_SK.framework */,
+				5776F789217DE5F9A60567CB /* Pods_Blinded_SK_Blinded_SKUITests.framework */,
+				17DBDDE164DFD68576C2F350 /* Pods_Blinded_SKTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +148,7 @@
 				BEE8157F2593DF8A00A11738 /* Blinded-SKUITests */,
 				BEE8155B2593DF8700A11738 /* Products */,
 				BE24D5BA259A90D9007A45C3 /* Frameworks */,
+				8E8DF8DC933ACD5C625677A1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,12 +199,16 @@
 		BEE815A62594093700A11738 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				BEE815B72594393700A11738 /* Lost.mp3 */,
-				BEE815A72594094300A11738 /* Ninja-0.mp3 */,
-				BEE815B225940CED00A11738 /* Correct.mp3 */,
-				BEE815A82594094300A11738 /* Ninja-90.mp3 */,
-				BEE815A92594094300A11738 /* Ninja-180.mp3 */,
-				BEE815AA2594094300A11738 /* Ninja-270.mp3 */,
+				BEF98668259C4EB30008E38B /* Correct.mp3 */,
+				BEF98669259C4EB30008E38B /* Lost.mp3 */,
+				BEF9866A259C4EB30008E38B /* Ninja-0.mp3 */,
+				BEF9867F259C58FE0008E38B /* Ninja-45.mp3 */,
+				BEF98667259C4EB30008E38B /* Ninja-90.mp3 */,
+				BEF9867C259C58FE0008E38B /* Ninja-135.mp3 */,
+				BEF9866B259C4EB30008E38B /* Ninja-180.mp3 */,
+				BEF9867E259C58FE0008E38B /* Ninja-225.mp3 */,
+				BEF9866C259C4EB30008E38B /* Ninja-270.mp3 */,
+				BEF9867D259C58FE0008E38B /* Ninja-315.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -176,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEE815852593DF8A00A11738 /* Build configuration list for PBXNativeTarget "Blinded-SK" */;
 			buildPhases = (
+				8AEC41EF972F47F6A6A9FD95 /* [CP] Check Pods Manifest.lock */,
 				BEE815562593DF8700A11738 /* Sources */,
 				BEE815572593DF8700A11738 /* Frameworks */,
 				BEE815582593DF8700A11738 /* Resources */,
+				C44821726D3DBADB707D1321 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEE815882593DF8A00A11738 /* Build configuration list for PBXNativeTarget "Blinded-SKTests" */;
 			buildPhases = (
+				5A5E3279DB95D2CC7E397982 /* [CP] Check Pods Manifest.lock */,
 				BEE8156D2593DF8A00A11738 /* Sources */,
 				BEE8156E2593DF8A00A11738 /* Frameworks */,
 				BEE8156F2593DF8A00A11738 /* Resources */,
@@ -211,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEE8158B2593DF8A00A11738 /* Build configuration list for PBXNativeTarget "Blinded-SKUITests" */;
 			buildPhases = (
+				2E8AACC61B22654BE906DE89 /* [CP] Check Pods Manifest.lock */,
 				BEE815782593DF8A00A11738 /* Sources */,
 				BEE815792593DF8A00A11738 /* Frameworks */,
 				BEE8157A2593DF8A00A11738 /* Resources */,
+				A4E09A63458D555BD1AECDF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +280,9 @@
 		BEE815522593DF8700A11738 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					com.apple.gamecenter.Leaderboard,
+				);
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
@@ -272,14 +324,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEE815B82594393800A11738 /* Lost.mp3 in Resources */,
-				BEE815B325940CED00A11738 /* Correct.mp3 in Resources */,
-				BEE815AD2594094400A11738 /* Ninja-180.mp3 in Resources */,
-				BEE815AC2594094400A11738 /* Ninja-90.mp3 in Resources */,
-				BEE815AB2594094400A11738 /* Ninja-0.mp3 in Resources */,
+				BEF98672259C4EB30008E38B /* Ninja-270.mp3 in Resources */,
+				BEF9866D259C4EB30008E38B /* Ninja-90.mp3 in Resources */,
+				BEF98680259C58FE0008E38B /* Ninja-135.mp3 in Resources */,
+				BEF98682259C58FE0008E38B /* Ninja-225.mp3 in Resources */,
+				BEF98683259C58FE0008E38B /* Ninja-45.mp3 in Resources */,
+				BEF9866E259C4EB30008E38B /* Correct.mp3 in Resources */,
+				BEF98670259C4EB30008E38B /* Ninja-0.mp3 in Resources */,
+				BEF98681259C58FE0008E38B /* Ninja-315.mp3 in Resources */,
+				BEF9866F259C4EB30008E38B /* Lost.mp3 in Resources */,
+				BEF98671259C4EB30008E38B /* Ninja-180.mp3 in Resources */,
 				BEE815692593DF8700A11738 /* Main.storyboard in Resources */,
 				BEE8156B2593DF8A00A11738 /* Assets.xcassets in Resources */,
-				BEE815AE2594094400A11738 /* Ninja-270.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +354,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E8AACC61B22654BE906DE89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Blinded-SK-Blinded-SKUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A5E3279DB95D2CC7E397982 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Blinded-SKTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AEC41EF972F47F6A6A9FD95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Blinded-SK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4E09A63458D555BD1AECDF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Blinded-SK-Blinded-SKUITests/Pods-Blinded-SK-Blinded-SKUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Blinded-SK-Blinded-SKUITests/Pods-Blinded-SK-Blinded-SKUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blinded-SK-Blinded-SKUITests/Pods-Blinded-SK-Blinded-SKUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C44821726D3DBADB707D1321 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Blinded-SK/Pods-Blinded-SK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Blinded-SK/Pods-Blinded-SK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blinded-SK/Pods-Blinded-SK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BEE815562593DF8700A11738 /* Sources */ = {
@@ -473,6 +632,7 @@
 		};
 		BEE815862593DF8A00A11738 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F17C9BA34C3EE4D7D63607 /* Pods-Blinded-SK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -493,6 +653,7 @@
 		};
 		BEE815872593DF8A00A11738 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413DD19187A8BDA1B44D118D /* Pods-Blinded-SK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -513,6 +674,7 @@
 		};
 		BEE815892593DF8A00A11738 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F81594DCEA05650EE12C4DBA /* Pods-Blinded-SKTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -535,6 +697,7 @@
 		};
 		BEE8158A2593DF8A00A11738 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BCE401CD0BC3DE481ABE75A /* Pods-Blinded-SKTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -557,6 +720,7 @@
 		};
 		BEE8158C2593DF8A00A11738 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4961B924C04CC00EB9A93109 /* Pods-Blinded-SK-Blinded-SKUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -577,6 +741,7 @@
 		};
 		BEE8158D2593DF8A00A11738 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7D1E99FDA6F81215F7FD238 /* Pods-Blinded-SK-Blinded-SKUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

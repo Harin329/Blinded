@@ -10,13 +10,16 @@ import GameplayKit
 import CoreMotion
 import AVFoundation
 import GameKit
+import GoogleMobileAds
 
 @available(iOS 11.0, *)
-class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate {
+class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate, GADInterstitialDelegate {
     
-    private let directions = [0, 90, 180, 270] // 0-359
+    var parentVC: UIViewController?
+    var interstitial: GADInterstitial!
+
+    private let directions = [0, 45, 90, 135, 180, 225, 270, 315] // 0-359
     var overlay = OverlayScene(size: CGSize(width: 100, height: 100))
-    var parentHS: UILabel?
     
     let APP = CMHeadphoneMotionManager()
     var player: AVAudioPlayer?
@@ -31,6 +34,8 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate {
     override init() {
         super.init()
         
+        interstitial = createAndLoadInterstitial()
+        
         APP.delegate = self
         
         foe = directions.randomElement()!
@@ -44,121 +49,129 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate {
             guard let motion = motion, error == nil else { return }
             let yaw = motion.attitude.yaw
             
-            if (yaw >= 0) {
-                // Left
-                if (yaw >= 1.5) {
-                    // Q3
-                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
-//                        print("left")
-                        self?.facing = 180
-                        if (self?.foe == 0) {
-                            self?.relative = 90
-                        } else if (self?.foe == 90) {
-                            self?.relative = 180
-                        } else if (self?.foe == 180) {
-                            self?.relative = 270
-                        } else if (self?.foe == 270) {
-                            self?.relative = 0
-                        }
-                    } else {
-//                        print("back")
-                        self?.facing = 270
-                        if (self?.foe == 0) {
-                            self?.relative = 180
-                        } else if (self?.foe == 90) {
-                            self?.relative = 270
-                        } else if (self?.foe == 180) {
-                            self?.relative = 0
-                        } else if (self?.foe == 270) {
-                            self?.relative = 90
-                        }
-                    }
-                } else {
-                    // Q2
-                    if (abs(yaw) >= abs(yaw - 1.5)) {
-//                        print("left")
-                        self?.facing = 180
-                        if (self?.foe == 0) {
-                            self?.relative = 90
-                        } else if (self?.foe == 90) {
-                            self?.relative = 180
-                        } else if (self?.foe == 180) {
-                            self?.relative = 270
-                        } else if (self?.foe == 270) {
-                            self?.relative = 0
-                        }
-                    } else {
-//                        print("front")
-                        self?.facing = 90
-                        if (self?.foe == 0) {
-                            self?.relative = 0
-                        } else if (self?.foe == 90) {
-                            self?.relative = 90
-                        } else if (self?.foe == 180) {
-                            self?.relative = 180
-                        } else if (self?.foe == 270) {
-                            self?.relative = 270
-                        }
-                    }
-                }
-            } else {
-                // Right
-                if (yaw >= -1.5) {
-                    // Q1
-                    if (abs(yaw) >= abs(yaw - 1.5)) {
-//                        print("right")
-                        self?.facing = 0
-                        if (self?.foe == 0) {
-                            self?.relative = 270
-                        } else if (self?.foe == 90) {
-                            self?.relative = 0
-                        } else if (self?.foe == 180) {
-                            self?.relative = 90
-                        } else if (self?.foe == 270) {
-                            self?.relative = 180
-                        }
-                    } else {
-//                        print("front")
-                        self?.facing = 90
-                        if (self?.foe == 0) {
-                            self?.relative = 0
-                        } else if (self?.foe == 90) {
-                            self?.relative = 90
-                        } else if (self?.foe == 180) {
-                            self?.relative = 180
-                        } else if (self?.foe == 270) {
-                            self?.relative = 270
-                        }
-                    }
-                } else {
-                    // Q4
-                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
-//                        print("right")
-                        self?.facing = 0
-                        if (self?.foe == 0) {
-                            self?.relative = 270
-                        } else if (self?.foe == 90) {
-                            self?.relative = 0
-                        } else if (self?.foe == 180) {
-                            self?.relative = 90
-                        } else if (self?.foe == 270) {
-                            self?.relative = 180
-                        }
-                    } else {
-//                        print("back")
-                        self?.facing = 270
-                        if (self?.foe == 0) {
-                            self?.relative = 180
-                        } else if (self?.foe == 90) {
-                            self?.relative = 270
-                        } else if (self?.foe == 180) {
-                            self?.relative = 0
-                        } else if (self?.foe == 270) {
-                            self?.relative = 90
-                        }
-                    }
-                }
+            var degree = ((yaw + 3)/6 * 360) - 90
+            if (degree < 0) {
+                degree += 360
             }
+            
+            self?.facing = Int(degree)
+
+            
+//            if (yaw >= 0) {
+//                // Left
+//                if (yaw >= 1.5) {
+//                    // Q3
+//                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
+////                        print("left")
+//                        self?.facing = 180
+//                        if (self?.foe == 0) {
+//                            self?.relative = 90
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 180
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 270
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 0
+//                        }
+//                    } else {
+////                        print("back")
+//                        self?.facing = 270
+//                        if (self?.foe == 0) {
+//                            self?.relative = 180
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 270
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 0
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 90
+//                        }
+//                    }
+//                } else {
+//                    // Q2
+//                    if (abs(yaw) >= abs(yaw - 1.5)) {
+////                        print("left")
+//                        self?.facing = 180
+//                        if (self?.foe == 0) {
+//                            self?.relative = 90
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 180
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 270
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 0
+//                        }
+//                    } else {
+////                        print("front")
+//                        self?.facing = 90
+//                        if (self?.foe == 0) {
+//                            self?.relative = 0
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 90
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 180
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 270
+//                        }
+//                    }
+//                }
+//            } else {
+//                // Right
+//                if (yaw >= -1.5) {
+//                    // Q1
+//                    if (abs(yaw) >= abs(yaw - 1.5)) {
+////                        print("right")
+//                        self?.facing = 0
+//                        if (self?.foe == 0) {
+//                            self?.relative = 270
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 0
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 90
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 180
+//                        }
+//                    } else {
+////                        print("front")
+//                        self?.facing = 90
+//                        if (self?.foe == 0) {
+//                            self?.relative = 0
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 90
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 180
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 270
+//                        }
+//                    }
+//                } else {
+//                    // Q4
+//                    if (abs(yaw - 3) >= abs(yaw - 1.5)) {
+////                        print("right")
+//                        self?.facing = 0
+//                        if (self?.foe == 0) {
+//                            self?.relative = 270
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 0
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 90
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 180
+//                        }
+//                    } else {
+////                        print("back")
+//                        self?.facing = 270
+//                        if (self?.foe == 0) {
+//                            self?.relative = 180
+//                        } else if (self?.foe == 90) {
+//                            self?.relative = 270
+//                        } else if (self?.foe == 180) {
+//                            self?.relative = 0
+//                        } else if (self?.foe == 270) {
+//                            self?.relative = 90
+//                        }
+//                    }
+//                }
+//            }
             
         })
     }
@@ -167,7 +180,32 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate {
         super.init(coder: aDecoder)
     }
     
+    func nearest(of: Int, options: [Int]) -> Int {
+        var min = 1000
+        var closest = of;
+        
+        for num in options {
+            let diff = abs(num - of);
+            
+            if (diff < min) {
+                min = diff;
+                closest = num;
+            }
+        }
+        return closest;
+    }
+    
     @objc func cycleOnce(timer: Timer!) {
+        facing = nearest(of: facing, options: directions)
+        let seperation = facing - foe
+        if (seperation > 90) {
+            relative = 360 - (seperation - 90)
+        } else if (seperation == 90) {
+            relative = 0
+        } else {
+            relative = seperation
+        }
+        
         if (facing == foe) {
             self.overlay.life = 2
             playSound(sound: "Correct")
@@ -189,7 +227,6 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate {
                 self.overlay.finalScoreNode.text = "Final Score: \(self.overlay.score)"
                 self.overlay.finalScoreNode.isHidden = false
                 
-                
                 let highScore = UserDefaults.standard.value(forKey: "highscore") as? Int ?? 0
                 UserDefaults.standard.set(max(self.overlay.score, highScore), forKey: "highscore")
                 
@@ -198,8 +235,25 @@ class GameScene: SCNScene, CMHeadphoneMotionManagerDelegate {
                         print(error as Any)
                     }
                 }
+                
+                if interstitial.isReady {
+                    interstitial.present(fromRootViewController: parentVC!)
+                  } else {
+                    print("Ad wasn't ready")
+                  }
             }
         }
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
     }
     
     func playSound(sound: String) {

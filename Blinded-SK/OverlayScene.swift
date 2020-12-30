@@ -11,6 +11,7 @@ import SpriteKit
 class OverlayScene: SKScene {
     var hsDelegate:highScoreDelegate?
     
+    var adView: SKView?
     var parentScene: GameScene!
     var pauseNode: SKSpriteNode!
     var scoreNode: SKLabelNode!
@@ -46,6 +47,7 @@ class OverlayScene: SKScene {
         
         self.addChild(self.pauseNode)
         self.addChild(self.scoreNode)
+        
         
         self.resumeNode = SKLabelNode(text: "Resume")
         self.resumeNode.name = "Resume"

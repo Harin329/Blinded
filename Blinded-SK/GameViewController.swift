@@ -63,7 +63,6 @@ class GameViewController: UIViewController, CMHeadphoneMotionManagerDelegate, GK
     }
     
     func newHighScore() {
-        print("here")
         updateScore()
     }
     
@@ -99,7 +98,7 @@ class GameViewController: UIViewController, CMHeadphoneMotionManagerDelegate, GK
         self.sceneView.backgroundColor = UIColor.black
         let gs = GameScene()
         gs.overlay = self.spriteScene
-        gs.parentHS = self.HighScore
+        gs.parentVC = self
         self.sceneView.scene = gs
         self.spriteScene.parentScene = gs
         self.spriteScene.hsDelegate = self
@@ -111,7 +110,7 @@ class GameViewController: UIViewController, CMHeadphoneMotionManagerDelegate, GK
     }
     
     @IBAction func leaderboardPressed(_ sender: Any) {
-        let gcVC = GKGameCenterViewController(state: .dashboard)
+        let gcVC = GKGameCenterViewController(state: .leaderboards)
         gcVC.gameCenterDelegate = self
         present(gcVC, animated: true, completion: nil)
     }
