@@ -27,35 +27,35 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Blinded!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQb-NL-DFV">
-                                        <rect key="frame" x="20" y="100" width="374" height="24"/>
+                                        <rect key="frame" x="20" y="50" width="374" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igl-db-WCL">
-                                        <rect key="frame" x="29" y="144" width="356" height="120"/>
+                                        <rect key="frame" x="29" y="94" width="356" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="x2g-t2-elz"/>
                                         </constraints>
-                                        <string key="text">You are blinded in a pitch dark room. You hear sounds around you. Admist your confusion, you realize the sounds back away if you face towards their direction. Survive for as long as you can, good luck!</string>
+                                        <string key="text">You are blinded in a pitch dark room. You hear sounds around you every 5 SECONDS. Admist your confusion, you realize the sounds back away if you face towards their direction. Survive for as long as you can, good luck!</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please use Airpod Pros for full experience" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2A0-t8-Bmf">
-                                        <rect key="frame" x="20" y="445" width="374" height="17"/>
+                                        <rect key="frame" x="20" y="285" width="374" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airpods Not Detected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="095-j4-Xra">
-                                        <rect key="frame" x="20" y="472" width="374" height="17"/>
+                                        <rect key="frame" x="20" y="312" width="374" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.0039215686269999999" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwA-iL-jAE">
-                                        <rect key="frame" x="20" y="519" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="359" width="374" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ahG-IM-GcI"/>
@@ -68,7 +68,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVu-vV-oix">
-                                        <rect key="frame" x="20" y="659" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="499" width="374" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="tYf-5v-Udf"/>
@@ -81,7 +81,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHT-kQ-C9D">
-                                        <rect key="frame" x="20" y="589" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="429" width="374" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5R9-sT-nyw"/>
@@ -94,7 +94,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpk-MT-ZIp">
-                                        <rect key="frame" x="29" y="344" width="356" height="21"/>
+                                        <rect key="frame" x="29" y="224" width="356" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -102,13 +102,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0039215686274509803" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="rpk-MT-ZIp" firstAttribute="top" secondItem="Igl-db-WCL" secondAttribute="bottom" constant="80" id="0sC-Wz-pbO"/>
+                                    <constraint firstItem="rpk-MT-ZIp" firstAttribute="top" secondItem="Igl-db-WCL" secondAttribute="bottom" constant="10" id="0sC-Wz-pbO"/>
                                     <constraint firstItem="rpk-MT-ZIp" firstAttribute="centerX" secondItem="cPn-c0-gf2" secondAttribute="centerX" id="28w-Pe-cpT"/>
                                     <constraint firstAttribute="trailing" secondItem="HHT-kQ-C9D" secondAttribute="trailing" constant="20" id="2hA-FM-30i"/>
                                     <constraint firstAttribute="trailing" secondItem="2A0-t8-Bmf" secondAttribute="trailing" constant="20" id="2xn-9l-hU6"/>
                                     <constraint firstAttribute="trailing" secondItem="rpk-MT-ZIp" secondAttribute="trailing" constant="29" id="9wh-so-uU2"/>
                                     <constraint firstAttribute="trailing" secondItem="IwA-iL-jAE" secondAttribute="trailing" constant="20" id="EZ3-MS-oya"/>
-                                    <constraint firstItem="2A0-t8-Bmf" firstAttribute="top" secondItem="rpk-MT-ZIp" secondAttribute="bottom" constant="80" id="FdH-xZ-M1i"/>
+                                    <constraint firstItem="2A0-t8-Bmf" firstAttribute="top" secondItem="rpk-MT-ZIp" secondAttribute="bottom" constant="40" id="FdH-xZ-M1i"/>
                                     <constraint firstItem="Igl-db-WCL" firstAttribute="leading" secondItem="cPn-c0-gf2" secondAttribute="leading" constant="29" id="FmU-je-LI9"/>
                                     <constraint firstAttribute="trailing" secondItem="095-j4-Xra" secondAttribute="trailing" constant="20" id="St7-HZ-faz"/>
                                     <constraint firstItem="IwA-iL-jAE" firstAttribute="top" secondItem="095-j4-Xra" secondAttribute="bottom" constant="30" id="U1P-fu-qvl"/>
@@ -117,7 +117,7 @@
                                     <constraint firstItem="YQb-NL-DFV" firstAttribute="leading" secondItem="cPn-c0-gf2" secondAttribute="leading" constant="20" id="Xgl-Ho-c9j"/>
                                     <constraint firstItem="095-j4-Xra" firstAttribute="leading" secondItem="cPn-c0-gf2" secondAttribute="leading" constant="20" id="ZzT-qI-Lhf"/>
                                     <constraint firstItem="DVu-vV-oix" firstAttribute="leading" secondItem="cPn-c0-gf2" secondAttribute="leading" constant="20" id="bNx-Lj-rXw"/>
-                                    <constraint firstItem="YQb-NL-DFV" firstAttribute="top" secondItem="cPn-c0-gf2" secondAttribute="top" constant="100" id="dya-8t-zIL"/>
+                                    <constraint firstItem="YQb-NL-DFV" firstAttribute="top" secondItem="cPn-c0-gf2" secondAttribute="top" constant="50" id="dya-8t-zIL"/>
                                     <constraint firstItem="HHT-kQ-C9D" firstAttribute="top" secondItem="IwA-iL-jAE" secondAttribute="bottom" constant="30" id="gup-kx-3Ra"/>
                                     <constraint firstItem="IwA-iL-jAE" firstAttribute="leading" secondItem="cPn-c0-gf2" secondAttribute="leading" constant="20" id="i5j-ZA-eKC"/>
                                     <constraint firstItem="2A0-t8-Bmf" firstAttribute="leading" secondItem="cPn-c0-gf2" secondAttribute="leading" constant="20" id="oAT-y1-RKB"/>
